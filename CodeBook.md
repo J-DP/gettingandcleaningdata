@@ -138,11 +138,11 @@
 * [57] frequencybodygyro-mean-z
 	- mean frequency of body gyroscopic movement on z axis
 * [58] frequencybodygyro-sd-x
--	standard deviation of body gyroscopic movement on x axis
+	- standard deviation of body gyroscopic movement on x axis
 * [59] frequencybodygyro-sd-y
--	standard deviation of body gyroscopic movement on y axis
+	- standard deviation of body gyroscopic movement on y axis
 * [60] frequencybodygyro-sd-z
--	standard deviation of body gyroscopic movement on z axis
+	- standard deviation of body gyroscopic movement on z axis
 * [61] frequencybodyaccelerationmagnitude-mean
 	- mean frequency of body acceleation magnitude
 * [62] frequencybodyaccelerationmagnitude-sd
