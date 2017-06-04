@@ -81,12 +81,16 @@ combineddf <- mutate(combineddf,subject = as.integer(mycombinedsubjects$V1))
 mytestlabels = read.table(".\\UCI HAR Dataset\\test\\y_test.txt")
 mytrainlabels = read.table(".\\UCI HAR Dataset\\train\\y_train.txt")
 
+mytestactdf <- tbl_df(mytestlabels)
+mytrainactdf<- tbl_df(mytrainlabels)  
+
 ## Load the activity label names
 myactivities = read.table(".\\UCI HAR Dataset\\activity_labels.txt")
+myactivitiesdf <- tbl_df(myactivities)
 
 ## merge the activity id and label 
-mytestactivities = merge(mytestlabels,myactivities)
-mytrainactivities = merge(mytrainlabels,myactivities)
+mytestactivities <- inner_join(mytestactdf,myactivitiesdf,by=c("V1","V1"))
+mytrainactivities <- inner_join(mytrainactdf,myactivitiesdf,by=c("V1","V1"))
 
 ## merge the activity datasets via rbind
 mycombinedactivities <-  rbind(mytestactivities,mytrainactivities)
@@ -148,5 +152,4 @@ write.table(tidydata, file = ".\\tidydata.txt",row.name=FALSE)
 
 print("*** run_analysis completed - see tidydata.txt ***")
 
-
-
+View(tidydata)
